@@ -1,0 +1,87 @@
+% Smart Sense Lab Presentation Template en Overleaf
+% https://www.overleaf.com/latex/templates/smart-sense-lab-presentation-template/sztjjzfmwgkz
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+
+% Modificando los captions
+\setbeamertemplate{caption}{\raggedright\insertcaption\par} % No caption
+\setbeamerfont{caption}{size=\footnotesize} % Tamaño
+\setbeamercolor{caption}{fg=black} % Color
+
+
+\definecolor{Logo1}{rgb}{0.2,0.5,0.3} % Verde
+\definecolor{Logo2}{rgb}{0.2,0.5,0.3} % Verde
+% \setbeamercolor*{palette primary}{bg=Logo1, fg=white}
+% \setbeamercolor*{palette secondary}{bg=Logo2, fg=white}
+% \setbeamercolor*{palette tertiary}{bg=white, fg=Logo1}
+% \setbeamercolor*{palette quaternary}{bg=Logo1,fg=white}
+\setbeamercolor{structure}{fg=Logo1} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=Logo1} % TOC sections
+
+% Barra oscura que muestre las secciones
+\apptocmd{\frame}{}{}{}
+\setbeamertemplate{headline}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+			\insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+		\end{beamercolorbox}%
+	}
+}
+
+%------------------------------------------------------------
+
+% Portada
+\input{0_Portada}
+
+%------------------------------------------------------------
+
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+  \begin{frame}
+  	\frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%------------------------------------------------------------
+
+\begin{document}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+\begin{frame}
+	\frametitle{Contenido}
+	\tableofcontents
+\end{frame}
+
+%---------------------------------------------------------
+% Contenido 
+
+\input{1_Introduction}
+\input{2_Objetivos}
+\input{3_Zona-de-estudio}
+\input{4_Metodologia}
+\input{5_Resultados}
+\input{6_Conclusiones}
+
+%---------------------------------------------------------
+
+\begin{frame}{}
+	\centering \Huge
+	\emph{¡Gracias CIDRHI!}
+\end{frame}
+
+\end{document}
