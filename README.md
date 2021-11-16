@@ -1,6 +1,8 @@
 ![](tex_docs_cover.jpg)
 
-Documentos realizados con LaTeX 
+### Documentos realizados con LaTeX
+
+1. [Avance de Tesis 1](Avance_de_tesis_1/main.pdf): Clasificación de cultivos mediante Teledetección, aplicando el método de clasificación supervisada Random Forest, Valle de Chincha, Ica.
 
 ### Referencias de apoyo
 
