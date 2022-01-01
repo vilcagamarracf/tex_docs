@@ -1,0 +1,184 @@
+%Autor: José Luis Huanuqueño Murillo (20170294@lamolina.edu.pe)
+\documentclass[12pt,oneside,a4paper]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} 
+\usepackage[margin=2.5cm]{geometry}
+
+% Paquete para elaborar página de Nomenclatura
+\usepackage[intoc, spanish]{nomencl}
+\renewcommand{\nomname}{NOMENCLATURA}
+\makenomenclature
+
+\usepackage{etoolbox}
+\usepackage{mathptmx}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsfonts,amssymb} 
+\usepackage{caption} 
+\usepackage{setspace}
+\usepackage{graphicx} 
+\usepackage{csquotes}
+\usepackage{changepage}
+\usepackage{subcaption}	% Para subfiguras
+\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{array} 
+\usepackage{float}
+\usepackage{pdflscape} % Página horizontal
+\usepackage{lscape} % Hoja horizontal
+\usepackage{pdfpages}
+\usepackage{wallpaper}
+\usepackage{acronym}
+\usepackage{tikz} % Para desarrollar funciones
+\usepackage{url} % Para insertar url sin problemas
+\usepackage{color} % Para texto con diferente colores
+\usepackage{tablefootnote} 
+\usepackage{lipsum} % Agregar texto de relleno
+\usepackage{enumitem}
+\captionsetup[table]{labelfont=bf,textfont=bf,skip=6pt}
+% \captionsetup[figure]{labelfont=bf,textfont=bf}
+\captionsetup[figure]{labelfont=bf,skip=10pt,textfont=bf}
+\usepackage[font=small,labelfont=bf,width=\textwidth,justification=centering]{caption}
+
+\setlength{\leftmargini}{1em}
+
+\usepackage{appendix}
+\newcommand\listappendixname{ÍNDICE DE ANEXOS}
+\newcommand\appcaption[1]{%
+  \addcontentsline{app}{section}{#1}}
+\makeatletter
+\newcommand\listofappendices{%
+% \setlength{\parskip}{0.2em} 
+  \chapter*{\listappendixname}\@starttoc{app}}
+\makeatother
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+{\vspace{-0.56cm}
+{\fontsize{14pt}{ \baselineskip}\selectfont}\bfseries\centering}
+{\thechapter}{1em}{\vspace{-1.3cm}}
+\titleformat{\section}[block]
+{\vspace{0cm}
+{\fontsize{12pt}{ \baselineskip}\selectfont}\bfseries}
+{\thesection}{1em}{\vspace{-0.4cm}}
+\titleformat{\subsection}[block]
+{\vspace{-0.6cm}
+{\fontsize{12pt}{ \baselineskip}\selectfont}\bfseries}
+{\thesubsection}{1em}{\vspace{-0.4cm}}
+\titleformat{\subsubsection}[block]
+{\vspace{-0.6cm}
+{\fontsize{12pt}{ \baselineskip}\selectfont}\bfseries}
+{\thesubsubsection}{1em}{\vspace{-0.3cm}}
+
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thechapter}{\Roman{chapter}.}
+
+\AtBeginDocument{
+    \renewcommand{\contentsname}{ÍNDICE GENERAL}
+    \renewcommand{\listtablename}{ÍNDICE DE TABLAS}
+    \renewcommand{\listfigurename}{ÍNDICE DE FIGURAS}
+    % \renewcommand{\contentsname}{Lista de Contenidos}
+    % \renewcommand{\refname}{VIII. REFERENCIAS}
+    \renewcommand{\figurename}{Figura} % Cambiar nombre por FIGURA al inicio
+    \renewcommand{\tablename}{Tabla} % Cambiar nombre por TABLA 
+    
+    \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+    \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+    \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+} % Poner nombre a la Tabla
+
+\setcounter{secnumdepth}{6} % para añadir párrafos y subpárrafos
+\setcounter{tocdepth}{5} % para que salgan en la tabla de contenidos los párrafos y subpárrafos
+
+% BIBLIOGRAFIA
+\usepackage[backend=biber,style=apa,citestyle = apa, sorting = nyt]{biblatex}
+\addbibresource{References/References.bib}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[flushleft]{threeparttable}
+\usepackage{booktabs}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\doublespacing
+
+% --- Cuerpo del documento ---
+\begin{document}
+
+\frontmatter
+
+% Incluir Cover.tex (No confundir con Portada.tex)
+\input{Cover/Cover} 
+
+% Incluir Portada.tex (No confundir con Cover.tex)
+\input{Portada/Portada}
+% \addcontentsline{toc}{chapter}{\textbf{PORTADA}}
+
+\pagenumbering{Roman} % roman para minusculas http://www.ntg.nl/maps/16/29.pdf
+
+% Incluir Dedicatoria.tex (OJO: Texto alineado a la derecha)
+\input{Dedicatoria/Dedicatoria}
+\addcontentsline{toc}{chapter}{\textbf{DEDICATORIA}}
+
+% Incluir Agradecimiento.tex
+\input{Agradecimiento/Agradecimiento}
+\addcontentsline{toc}{chapter}{\textbf{AGRADECIMIENTO}}
+\doublespacing
+
+% Incluir Índice General y 
+\tableofcontents
+\addcontentsline{toc}{chapter}{\textbf{ÍNDICE GENERAL}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[c]{\thepage}
+\listoftables
+\addcontentsline{toc}{chapter}{\textbf{ÍNDICE DE TABLAS}}
+\listoffigures
+\addcontentsline{toc}{chapter}{\textbf{ÍNDICE DE FIGURAS}}
+\listofappendices
+\addcontentsline{toc}{chapter}{\textbf{ÍNDICE DE ANEXOS}}
+
+\doublespacing
+\setlength{\parskip}{1em} 
+\setlength{\parindent}{0cm}
+
+% Inlcuir Nomenclatura y agregar al indice
+\input{Nomenclature/Nomenclature}
+
+\doublespacing
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1em}
+
+% Incluir Resumen y agregar al índice
+\input{Resumen/Resumen}
+\addcontentsline{toc}{chapter}{\textbf{RESUMEN}}
+
+% Inlcuir Abstract y agregar al índice
+\input{Abstract/Abstract}
+\addcontentsline{toc}{chapter}{\textbf{ABSTRACT}} 
+
+\newpage
+\doublespacing
+\mainmatter
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[c]{\thepage}
+
+% \setlength{\parskip}{\baselineskip} 
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1em} 
+
+% Incluir archivos.tex
+\input{Chapters/Chapter1}   % Introducción
+\input{Chapters/Chapter2}   % Objetivos
+\input{Chapters/Chapter3}   % Revisión Literaria
+\input{Chapters/Chapter4}   % Metodología
+\input{Chapters/Chapter5}   % Resultados y Discusión
+\input{Chapters/Chapter6}   % Conclusiones
+\input{Chapters/Chapter7}   % Recomendaciones
+\input{Chapters/Chapter8}   % Referencias Bibliográficas
+\input{Chapters/Chapter9}   % Anexos
+
+\end{document}
+% --- Fin de cuerpo del documento ---
