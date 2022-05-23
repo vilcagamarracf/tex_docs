@@ -51,6 +51,9 @@
 
 \setlength{\leftmargini}{1em}
 
+
+
+% Apendice
 \usepackage{appendix}
 \newcommand\listappendixname{ÍNDICE DE ANEXOS}
 \newcommand\appcaption[1]{
@@ -61,6 +64,9 @@
   \chapter*{\listappendixname}\@starttoc{app}}
 \makeatother
 
+
+
+% Darle formato a los chapters, sections, subsections y subsubsections
 \usepackage{titlesec}
 
 \titleformat{\chapter}[block]
@@ -100,6 +106,8 @@
 \setcounter{secnumdepth}{6} % para añadir párrafos y subpárrafos
 \setcounter{tocdepth}{5} % para que salgan en la tabla de contenidos los párrafos y subpárrafos
 
+
+
 % BIBLIOGRAFIA
 \usepackage[backend=biber,style=apa,citestyle = apa, sorting = nyt]{biblatex}
 \addbibresource{References/References.bib}
@@ -110,12 +118,16 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\baselinestretch}{1.5}
 
+
+
 \doublespacing % `setspace` package
+
+
 
 % --- Cuerpo del documento ---
 \begin{document}
 
-\frontmatter
+\frontmatter % The \frontmatter command makes the pages numbered in lowercase roman (v, vii), NO ENUMERA LOS CHAPTERS, although each chapter’s title appears in the table of contents
 
 % Incluir Cover.tex (No confundir con Portada.tex)
 \input{Cover/Cover} 
@@ -134,15 +146,20 @@
 \input{Agradecimiento/Agradecimiento}
 % \addcontentsline{toc}{chapter}{\textbf{AGRADECIMIENTO}}
 
+
 \doublespacing
+
 
 % Incluir Índice General y 
 \tableofcontents
 % \addcontentsline{toc}{chapter}{\textbf{ÍNDICE GENERAL}}
 
+
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[c]{\thepage}
+
 \listoftables
 \addcontentsline{toc}{chapter}{\textbf{ÍNDICE DE TABLAS}}
 \listoffigures
@@ -150,17 +167,22 @@
 \listofappendices
 \addcontentsline{toc}{chapter}{\textbf{ÍNDICE DE ANEXOS}}
 
+
 \doublespacing
 
-\setlength{\parskip}{1em} 
-\setlength{\parindent}{0cm}
+
+\setlength{\parskip}{1em}   % Distanciamiento entre parrafos
+\setlength{\parindent}{0cm} % Distancia de sangría al inicio -> 0
+
 
 % Inlcuir Nomenclatura y agregar al indice
 \input{Nomenclature/Nomenclature}
 
 \doublespacing
+
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{1em}
+
 
 % Incluir Resumen y agregar al índice
 \input{Resumen/Resumen}
@@ -174,7 +196,8 @@
 
 \doublespacing
 
-\mainmatter
+\mainmatter % The \mainmatter command changes the behavior back to the expected version, and RESETS THE PAGE NUMBER.
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[c]{\thepage}
@@ -195,4 +218,5 @@
 \input{Chapters/Chapter9}   % Anexos
 
 \end{document}
+
 % --- Fin de cuerpo del documento ---
