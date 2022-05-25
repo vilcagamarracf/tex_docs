@@ -1,0 +1,19 @@
+\chapter{FLUJO DE CALOR DEL SUELO} % $G$
+
+Soil heat flux is the rate of heat storage in the soil and vegetation due to conduction. General METRIC applications compute G as a ratio $G/R_n$ using an empirical equation by Bastiaanssen (2000) representing values near midday
+
+\begin{equation}
+\frac{G}{R_n} = ( T_s - 273{.}15 ) (0{.}0038 + 0{.}0074 \alpha ) (1-0{.}98 \; \text{NDVI}^4) 
+\label{eq:1}
+\end{equation}
+% \qquad \text{(26)}
+
+Where:
+\begin{itemize}
+    \item $T_s$ : surface temperature (K)
+    \item $\alpha$ : surface albedo
+\end{itemize}
+
+G is then calculated by multiplying $G/R_n$ by $R_n$. 
+
+% \newpage

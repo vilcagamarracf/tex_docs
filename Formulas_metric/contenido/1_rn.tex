@@ -1,0 +1,124 @@
+\chapter{RADIACIÓN NETA} % $R_n$
+
+Morse et al. 2000:
+
+\begin{equation}
+R_n = (1- \alpha)R_{S\downarrow} + (R_{L\downarrow} - R_{L\uparrow}) - (1- \epsilon_0)R_{L\downarrow}
+\label{eq:1}
+\end{equation}
+
+Dónde: 
+\begin{itemize}
+    \item $R_n$ : Flujo de radiación neta $[W/m^2]$
+    \item $\alpha$ : Albedo de superficie
+    \item $R_{S\downarrow}$ : Radiación de onda corta entrante $[W/m^2]$
+    \item $R_{L\downarrow}$ : Radiación de onda larga entrante $[W/m^2]$
+    \item $R_{L\uparrow}$ : Radiación de onda larga saliente $[W/m^2]$
+    \item $\epsilon_0$ : Emisividad del ancho de banda en la superficie / broad-band surface thermal emissivity
+\end{itemize}
+
+\section{Albedo} % $\alpha$
+
+Corrección atmosférica propuesta por Tasumi et. al (2007)
+
+\begin{equation}
+\rho_{s,b} = \frac{R_{\text{out},s,b}}{R_{\text{in},s,b}} = \frac{\rho_{t,b} - C_b(1-\tau_{in,b})}{\tau_{in,b}.\tau_{out,b}}
+\label{eq:1}
+\end{equation}
+
+Dónde:
+\begin{itemize}
+    \item $R_{\text{in},s,b}$ and $R_{\text{out},s,b}$: at-surface  hemispherical incoming and reflected radiances $[W m^{-2} \mu m^{-1}]$
+    \item $\tau_{in,b}$ : trasmitancias de la radiacion solar de entrada / effective narrowband transmittance for incoming solar radiation.
+    \item $\tau_{out,b}$ : y la de radiacion de onda corta reflejada de superficie / effective narrow band transmittance for shortwave radiation reflected from the surface.
+\end{itemize}
+
+% \newpage
+
+\subsection{Estimación de Transmitancias}
+
+\begin{equation}
+\tau_{\text{in},b} = C_1 \exp{
+\left( 
+  \frac{C_2 P}{K_t \cos{\theta_{hor}}} - \frac{C_3 W + C_4}{\cos{\theta_{\text{hor}}}}
+\right) 
+} + C_5
+\label{eq:1}
+\end{equation}
+
+\begin{equation}
+\tau_{\text{out},b} = C_1 \exp{
+\left( 
+  \frac{C_2 P}{K_t \cos{\eta}} - \frac{C_3 W + C_4}{\cos{\eta}}
+\right) 
+} + C_5
+\label{eq:1}
+\end{equation}
+
+Dónde:
+\begin{itemize}
+	\item C1 - C5 : constantes dadas en el trabajo de Allen et al. (2007)
+	\item Kt : el coeficiente de claridad que va de 0 a 1, Kt = 1 para aire limpio y Kt = 0.5 para aire turbio.  \item $\theta$h : ángulo de incidencia solar = zenith angle (90-elevation angle)
+\end{itemize}
+
+% \vspace{0.4cm}
+
+\section{Radiación de onda corta entrante $R_{S\downarrow}$}
+%\thispagestyle{empty}
+
+Incoming broad-band short-wave radiation, as direct and diffuse at the Earth’s surface $[W/m^2]$, represents the principal energy source for ET. Morse et al. (2000)
+  
+\begin{equation}
+R_{S\downarrow} = \frac{G_{sc} \cos\theta_{rel} \tau_{sw}}{d^2}
+\label{eq:1}
+\end{equation}
+
+Dónde:
+\begin{itemize}
+    \item $G_{sc}$ : Constante solar $[1367 \space W/m^2]$ 
+    \item $\theta_{rel}$ : Ángulo de incidencia solar $[\text{radianes}]$
+    \item $d^2$ : Cuadrado de la distancia relativa Tierra-Sol (OJO: También se menciona el inverso del cuadrado de la distancia relativa de tierra al sol)
+    \item $\tau_{sw}$ : Es la transmitancia en un sentido con condiciones de claridad / Transmitancia de la banda ancha $[W/m^2 \space K]$
+\end{itemize}
+
+% \vspace{0.4cm}
+  
+\section{Radiación de onda larga saliente $R_{L\uparrow}$}
+%\thispagestyle{empty}
+
+Outgoing long-wave radiation, RL↑, emitted from the surface is
+driven by surface temperature and surface emissivity. RL↑ is computed using the Stefan–Boltzmann equation Morse et al., 2000.
+
+$$
+R_{L\uparrow} = \epsilon_0  \sigma  T_{s}^{4}
+$$
+
+Dónde:
+\begin{itemize}
+    \item $R_{L\uparrow}$ : Radiación de onda larga saliente $[W/m^2]$
+    \item $\epsilon_0$ : Emisividad superficial de banda ancha / Broad band surface emissivity
+    \item $\sigma$ : Constante de Stefan-Boltzmann $(5.67*10^{-8}[W m^{-2}K^{-4}])$
+    \item $T_s$ : Temperatura de brillo de superficie $[K]$
+\end{itemize}
+
+% \vspace{0.4cm}
+
+\section{Radiación de onda larga entrante $R_{L\downarrow}$}
+%\thispagestyle{empty}
+
+Incoming Long-Wave Radiation
+
+\begin{equation}
+R_{L\downarrow} = \epsilon_a  \sigma  T_{a}^{4}
+\label{eq:1}
+\end{equation}
+
+Dónde:
+\begin{itemize}
+    \item $R_{L\downarrow}$ : Radiación de onda larga entrante $[W/m^2]$
+    \item $\epsilon_a$ : Effective atmospheric emissivity (dimensionless)
+    \item $\sigma$ : Constante de Stefan-Boltzmann $(5.67*10^{-8}[W m^{-2}K^{-4}])$
+    \item $T_a$ : Near-surface air temperature $[K]$
+\end{itemize}
+  
+% \newpage
