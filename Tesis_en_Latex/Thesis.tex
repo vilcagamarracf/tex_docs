@@ -69,21 +69,41 @@
 % Darle formato a los chapters, sections, subsections y subsubsections
 \usepackage{titlesec}
 
-\titleformat{\chapter}[block]
-{\vspace{-0.56cm}
-{\fontsize{14pt}{ \baselineskip}\selectfont}\bfseries\centering}
-{\thechapter}{1em}{\vspace{-1.3cm}}
+\titleformat
+{\chapter} % command
+[block] % shape
+{
+  \vspace{-0.56cm}
+  {\fontsize{14pt}{\baselineskip}\selectfont}
+  \bfseries
+  \centering
+  } % format
+{\thechapter} % label
+{1em} % sep
+{\vspace{-1.3cm}} % before-code
+
 \titleformat{\section}[block]
-{\vspace{0cm}
-{\fontsize{12pt}{ \baselineskip}\selectfont}\bfseries}
+{
+  \vspace{0cm}
+  {\fontsize{12pt}{ \baselineskip}\selectfont}
+  \bfseries
+  }
 {\thesection}{1em}{\vspace{-0.4cm}}
+
 \titleformat{\subsection}[block]
-{\vspace{-0.6cm}
-{\fontsize{12pt}{ \baselineskip}\selectfont}\bfseries}
+{
+  \vspace{-0.6cm}
+  {\fontsize{12pt}{ \baselineskip}\selectfont}
+  \bfseries
+  }
 {\thesubsection}{1em}{\vspace{-0.4cm}}
+
 \titleformat{\subsubsection}[block]
-{\vspace{-0.6cm}
-{\fontsize{12pt}{ \baselineskip}\selectfont}\bfseries}
+{
+  \vspace{-0.6cm}
+  {\fontsize{12pt}{ \baselineskip}\selectfont}
+  \bfseries
+  }
 {\thesubsubsection}{1em}{\vspace{-0.3cm}}
 
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
