@@ -1,4 +1,3 @@
-%Autor: José Luis Huanuqueño Murillo (20170294@lamolina.edu.pe)
 \documentclass[12pt,oneside,a4paper]{book}
 
 % Font Encoding: Permite escribir más carácteres
@@ -7,7 +6,8 @@
 
 \usepackage[main=spanish, english]{babel} % Establecer idioma
 
-\usepackage[margin=2.5cm]{geometry} % Establecer márgenes
+% Márgenes (puede usarse left, right, bottom y top)
+\usepackage[margin=2.5cm]{geometry} 
 
 % Paquete para elaborar página de Nomenclatura
 \usepackage[intoc, spanish]{nomencl}
@@ -16,41 +16,53 @@
 
 \usepackage{etoolbox}
 
-\usepackage{mathptmx} % Use Times as default text font, and provide maths support
-\usepackage{fancyhdr} % Extensive control of page headers and footers
-
+% Font Times (similar al Times New Roman), aplica para formulas tambien
+\usepackage{mathptmx} 
 \usepackage{amsmath,amsfonts,amssymb} 
+
+% Manejo de headers y footers
+\usepackage{fancyhdr}
 
 \usepackage{caption} 
 
-\usepackage{setspace} % Set space between lines
+% Interlineado
+\usepackage{setspace}
 
 \usepackage{graphicx} 
 \usepackage{csquotes}
+
 \usepackage{changepage}
+
 \usepackage{subcaption}	% Para subfiguras
 \usepackage{makeidx}
 \usepackage{multirow}
 \usepackage{array} 
 \usepackage{float}
+
 \usepackage{pdflscape} % Página horizontal
 \usepackage{lscape} % Hoja horizontal
+
 \usepackage{pdfpages}
 \usepackage{wallpaper}
 \usepackage{acronym}
+
 \usepackage{tikz} % Para desarrollar funciones
+
 \usepackage{url} % Para insertar url sin problemas
+
 \usepackage{color} % Para texto con diferente colores
 \usepackage{tablefootnote} 
+
 \usepackage{lipsum} % Agregar texto de relleno
+
 \usepackage{enumitem}
 \captionsetup[table]{labelfont=bf,textfont=bf,skip=6pt}
 % \captionsetup[figure]{labelfont=bf,textfont=bf}
 \captionsetup[figure]{labelfont=bf,skip=10pt,textfont=bf}
 \usepackage[font=small,labelfont=bf,width=\textwidth,justification=centering]{caption}
 
+% Para listas, establecer un margen
 \setlength{\leftmargini}{1em}
-
 
 
 % Apendice
@@ -63,7 +75,6 @@
 % \setlength{\parskip}{0.2em} 
   \chapter*{\listappendixname}\@starttoc{app}}
 \makeatother
-
 
 
 % Darle formato a los chapters, sections, subsections y subsubsections
