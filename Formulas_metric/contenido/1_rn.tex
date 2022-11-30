@@ -1,4 +1,6 @@
-\chapter{RADIACIÓN NETA} % $R_n$
+\vspace{0.4cm}
+
+\subsection{Radiación Neta}
 
 Morse et al. 2000:
 
@@ -17,14 +19,17 @@ Dónde:
     \item $\epsilon_0$ : Emisividad del ancho de banda en la superficie / broad-band surface thermal emissivity
 \end{itemize}
 
-\section{Albedo} % $\alpha$
+\vspace{0.4cm}
 
-Corrección atmosférica propuesta por Tasumi et. al (2007)
+\subsubsection{Albedo}
+
+Para obtener el albedo es necesario primero realizar una corrección atmosférica, dónde desaroolla la metodología propuesta por Tasumi et. al (2007).
 
 \begin{equation}
 \rho_{s,b} = \frac{R_{\text{out},s,b}}{R_{\text{in},s,b}} = \frac{\rho_{t,b} - C_b(1-\tau_{in,b})}{\tau_{in,b}.\tau_{out,b}}
 \label{eq:1}
 \end{equation}
+
 
 Dónde:
 \begin{itemize}
@@ -33,9 +38,8 @@ Dónde:
     \item $\tau_{out,b}$ : y la de radiacion de onda corta reflejada de superficie / effective narrow band transmittance for shortwave radiation reflected from the surface.
 \end{itemize}
 
-% \newpage
-
-\subsection{Estimación de Transmitancias}
+\newpage
+Estimación de Transmitancias
 
 \begin{equation}
 \tau_{\text{in},b} = C_1 \exp{
@@ -57,14 +61,14 @@ Dónde:
 
 Dónde:
 \begin{itemize}
-	\item C1 - C5 : constantes dadas en el trabajo de Allen et al. (2007)
-	\item Kt : el coeficiente de claridad que va de 0 a 1, Kt = 1 para aire limpio y Kt = 0.5 para aire turbio.  \item $\theta$h : ángulo de incidencia solar = zenith angle (90-elevation angle)
+  \item C1 - C5 : constantes dadas en el trabajo de Allen et al. (2007)
+  \item Kt : el coeficiente de claridad que va de 0 a 1, Kt = 1 para aire limpio y Kt = 0.5 para aire turbio.
+  \item $\theta$h : ángulo de incidencia solar = zenith angle (90-elevation angle)
 \end{itemize}
 
-% \vspace{0.4cm}
+\vspace{0.4cm}
 
-\section{Radiación de onda corta entrante $R_{S\downarrow}$}
-%\thispagestyle{empty}
+\subsubsection{Radiación de onda corta entrante $R_{S\downarrow}$}
 
 Incoming broad-band short-wave radiation, as direct and diffuse at the Earth’s surface $[W/m^2]$, represents the principal energy source for ET. Morse et al. (2000)
   
@@ -80,11 +84,10 @@ Dónde:
     \item $d^2$ : Cuadrado de la distancia relativa Tierra-Sol (OJO: También se menciona el inverso del cuadrado de la distancia relativa de tierra al sol)
     \item $\tau_{sw}$ : Es la transmitancia en un sentido con condiciones de claridad / Transmitancia de la banda ancha $[W/m^2 \space K]$
 \end{itemize}
-
-% \vspace{0.4cm}
   
-\section{Radiación de onda larga saliente $R_{L\uparrow}$}
-%\thispagestyle{empty}
+\vspace{0.4cm}
+  
+\subsubsection{Radiación de onda larga saliente $R_{L\uparrow}$}
 
 Outgoing long-wave radiation, RL↑, emitted from the surface is
 driven by surface temperature and surface emissivity. RL↑ is computed using the Stefan–Boltzmann equation Morse et al., 2000.
@@ -101,10 +104,9 @@ Dónde:
     \item $T_s$ : Temperatura de brillo de superficie $[K]$
 \end{itemize}
 
-% \vspace{0.4cm}
+\vspace{0.4cm}
 
-\section{Radiación de onda larga entrante $R_{L\downarrow}$}
-%\thispagestyle{empty}
+\subsubsection{Radiación de onda larga entrante $R_{L\downarrow}$}
 
 Incoming Long-Wave Radiation
 

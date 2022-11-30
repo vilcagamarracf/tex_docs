@@ -1,0 +1,46 @@
+\documentclass[a4paper, 12pt]{article}
+% \documentclass[12pt, oneside, a4paper]{book}
+
+% Font Encoding: Permite escribir más carácteres
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+
+\usepackage[main=spanish, english]{babel} % Establecer idioma
+\usepackage{url} % Para insertar url sin problemas
+\usepackage{hyperref}
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} 
+% \usepackage[margin=2.5cm]{geometry} % Establecer márgenes
+
+% \usepackage{times} % Use Times as default text font
+\usepackage{mathptmx} % Use Times as default text font, and provide maths support
+\usepackage{amsmath,amsfonts,amssymb} % Permitir usar $$ para fórmulas
+
+% Encabeezados
+\usepackage{fancyhdr}
+\fancyhead{} % clear all header fields
+\fancyhead[RO]{\nouppercase{\leftmark}}
+% \fancyhf{}
+% \fancyhead[C]{\leftmark}
+% \fancyhead[RO]{\nouppercase{\rightmark}}
+% % \fancyfoot[LE,RO]{\thepage}
+% \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\footrulewidth}{0.4pt}
+
+% Datos de la portada
+\title{Fórmulas usadas para estimar Evapotranspiración \\ Modelo METRIC}
+\author{Cesar Francisco Vilca Gamarra}
+\date{} % No mostrará fechas
+
+% Espaciado entre PÁRRAFOS y SANGRÍA
+\setlength{\parskip}{5 pt}
+\setlength{\parindent}{0cm} % Sin sangría para todo el doc
+
+% Establecer interlineado
+\usepackage{setspace}
+\onehalfspacing
+
+%Cambiando a Números Romanos los Capítulos
+% \usepackage{titlesec}
+% \renewcommand{\thesection}{\Roman{section}}
+% \renewcommand{\thesubsection}{\section\arabic{subsection}}

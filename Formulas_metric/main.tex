@@ -1,114 +1,22 @@
-\documentclass[12pt, oneside, a4paper]{book}
-
-% Font Encoding: Permite escribir más carácteres
-\usepackage[utf8]{inputenc} 
-\usepackage[T1]{fontenc} 
-
-\usepackage[main=spanish, english]{babel} % Establecer idioma
-\usepackage{url} % Para insertar url sin problemas
-\usepackage{hyperref}
-
-% Márgenes de espaciado de hoja
-\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} 
-% \usepackage[margin=2.5cm]{geometry} % O usando margin para los 4 espacios
-
-% Fonts: Times se asemeja a Times New Roman 
-\usepackage{times} % Use Times as default text font
-\usepackage{mathptmx} % Use Times as default text font, and provide maths support
-\usepackage{amsmath,amsfonts,amssymb} % Permitir usar $$ para formulas
-
-% O tambien usando fontspec para el font Times New Roman en Latex
-%\usepackage{fontspec} 
-%\setmainfont{Times New Roman}% solo funciona con compilador XeLaTeX
-
-% Modificando estilos de chapters, sections, subsectiones
-\usepackage{titlesec}
-
-\titleformat{\chapter}[block]
-	{
-		\vspace{0cm} % Espacio vertical antes del texto
-		\large
-		\bfseries
-		\centering
-	}
-	{\thechapter.}
-	{1em} %  "I." -- espacio -- "Descripcion" 
-	{\vspace{0cm}} % Espacio vertical despues del texto
-
-\titleformat{\section}[block]
-	{\vspace{0cm}\bfseries}
-	{\thesection.}
-	{1em}
-	{\vspace{0cm}}
-
-\titleformat{\subsection}[block]
-	{\vspace{0cm}\bfseries}
-	{\thesubsection.}
-	{1em}
-	{\vspace{0cm}}
-
-\titleformat{\subsubsection}[block]
-	{\vspace{0cm}\bfseries}
-	{\thesubsubsection.}
-	{1em}
-	{\vspace{0cm}}
-
-
-% Modificando estilo de numeracion de chapters
-\renewcommand{\thechapter}{\Roman{chapter}} %.
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-
-
-% Cambiar cuadrados por circulos en listas 
-\renewcommand{\labelitemi}{\textbullet}
-\setlength{\leftmargini}{1em}
-
-
-% Modificar encabezados con fancyhdr (no hacerlos visibles) y asignar numeracion de pagina
-\usepackage{fancyhdr}
-\pagestyle{fancy}  
-\fancyhf{}  
-\lhead{}  
-\cfoot{\thepage} % Numero de pagina centrado  
-\renewcommand{\headrulewidth}{0pt} % Eliminar linea de encabezado
-
-
-% Eliminar el indent al inicio del parrafo
-\setlength{\parindent}{0cm}
-\setlength{\parskip}{0em}
-
-
-% Espacio entre lineas con factor de escala
-\usepackage{setspace}
-\renewcommand{\baselinestretch}{1.5}
-
-%\AtBeginDocument{
-	%\renewcommand{\contentsname}{INDICE GENERAL}
-	% Cambia el nombre a un chapter en la tabla de contenidos	
-%}
-% ---------------------------------------------------
-
-% Informacion inicial
-\title{Formulas usadas para estimar Evapotranspiracion \\ Modelo METRIC}
-\author{Cesar Francisco Vilca Gamarra, 2022}
-\date{} % Omite la fecha debajo de author
-
+\input{preamble}
 
 \begin{document}
+\pagestyle{fancy}
+\maketitle
 
-\maketitle % Carga la "Informacion inicial"
-
-\frontmatter % The \frontmatter command makes the pages numbered in lowercase roman (v, vii), NO ENUMERA LOS CHAPTERS, although each chapter title appears in the table of contents
-
+\newpage
 \tableofcontents
 
-\mainmatter % The \mainmatter command changes the behavior back to the expected version, and RESETS THE PAGE NUMBER.
+\newpage
 
-% Cargando archivos
-\input{contenido/0_intro} 
-\input{contenido/1_rn} % Leer seccion 1
-\input{contenido/2_g}  % Leer seccion 2
-\input{contenido/3_h}  % Leer seccion 3
-\input{contenido/4_biblio}
+\section{Componentes de la ecuación Balance de energía}
+
+% \setcounter{section}{1} % How to set a specific chapter or section number in LaTeX
+
+Fórmulas empleadas en \href{https://www.researchgate.net/publication/228615269_Satellite-Based_Energy_Balance_for_Mapping_Evapotranspiration_With_Internalized_Calibration_METRIC_-_Model}{Allen et. al (2007)}.
+
+\input{contenido/1_rn}
+\input{contenido/2_g}
+\input{contenido/3_h}
 
 \end{document}
